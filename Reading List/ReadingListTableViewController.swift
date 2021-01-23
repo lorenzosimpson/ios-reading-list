@@ -15,6 +15,7 @@ class ReadingListTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
 
         // Do any additional setup after loading the view.
     }
@@ -59,6 +60,10 @@ class ReadingListTableViewController: UITableViewController {
         return 2
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(indexPath.row + 150)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return bookController.readBooks.count
@@ -84,6 +89,7 @@ class ReadingListTableViewController: UITableViewController {
             }
         }
         // needs to return a cell
+        cell.updateUI()
         return cell
     }
     

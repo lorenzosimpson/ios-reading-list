@@ -9,6 +9,9 @@
 import Foundation
 
 class BookController {
+    
+  
+    
     var books: [Book] = [Book(title: "A book", reasonToRead: "It's great", hasBeenRead: true)]
     
     var readBooks: [Book] {
